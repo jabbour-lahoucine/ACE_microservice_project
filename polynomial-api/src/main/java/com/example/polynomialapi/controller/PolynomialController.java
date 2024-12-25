@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/polynomial")
@@ -21,9 +22,10 @@ public class PolynomialController {
     public PolynomialController(PolynomialService polynomialService) {
         this.polynomialService = polynomialService;
     }
+
     @PostMapping("/calculate")
-    public ResponseEntity<PolynomialResponse> calculatePolynomial(@RequestBody PolynomialRequest request) {
-        PolynomialResponse response = polynomialService.calculatePolynomial(request.getPolynomial());
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    public Mono<ResponseEntity<PolynomialResponse>> calculatePolynomial(@RequestBody PolynomialRequest request) {
+        return polynomialService.calculatePolynomial(request.getPolynomial())
+                .map(ResponseEntity::ok);
     }
 }
