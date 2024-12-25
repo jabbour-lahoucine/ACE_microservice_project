@@ -23,7 +23,7 @@ public class FactorizationController {
     @PostMapping("/calculate")
     public ResponseEntity<FactorizationResponse> getFactorization(@RequestBody FactorizationRequest request) {
         try {
-            FactorizationResponse response = factorizationService.getFactorization(request.getCoefficients());
+            FactorizationResponse response = factorizationService.factorize(request);
             return new ResponseEntity<>(response, HttpStatus.OK);
         }catch(Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

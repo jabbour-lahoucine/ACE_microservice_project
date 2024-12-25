@@ -5,4 +5,12 @@ import lombok.Data;
 @Data
 public class FactorizationResponse {
     private String factorization;
+
+    public FactorizationResponse(String s) {
+        this.factorization = s;
+    }
+
+    public FactorizationResponse() {
+
+    }
 }
