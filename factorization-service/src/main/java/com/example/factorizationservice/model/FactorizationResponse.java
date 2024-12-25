@@ -13,4 +13,12 @@ public class FactorizationResponse {
     public FactorizationResponse() {
 
     }
+
+    public String getFactorization() {
+        return factorization;
+    }
+
+    public void setFactorization(String factorization) {
+        this.factorization = factorization;
+    }
 }

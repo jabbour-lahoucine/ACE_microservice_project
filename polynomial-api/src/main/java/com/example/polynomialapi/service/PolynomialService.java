@@ -28,7 +28,7 @@ public class PolynomialService {
         coefficientRequest.setPolynomial(polynomial);
 
         return webClient.post()
-                .uri("http://JABBOUR:8081/api/coefficients/calculate")
+                .uri("http://coefficient-service:8081/api/coefficients/calculate")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(coefficientRequest)
                 .retrieve()
@@ -48,7 +48,7 @@ public class PolynomialService {
                     rootsRequest.setCoefficients(coefficients);
 
                     return webClient.post()
-                            .uri("http://JABBOUR:8082/api/roots/calculate")
+                            .uri("http://roots-service:8082/api/roots/calculate")
                             .contentType(MediaType.APPLICATION_JSON)
                             .bodyValue(rootsRequest)
                             .retrieve()
@@ -67,7 +67,7 @@ public class PolynomialService {
                                 factorizationRequest.setCoefficients(coefficients);
 
                                 return webClient.post()
-                                        .uri("http://JABBOUR:8083/api/factorization/calculate")
+                                        .uri("http://factorization-service:8083/api/factorization/calculate")
                                         .contentType(MediaType.APPLICATION_JSON)
                                         .bodyValue(factorizationRequest)
                                         .retrieve()

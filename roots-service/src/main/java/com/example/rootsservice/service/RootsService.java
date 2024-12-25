@@ -8,33 +8,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 public class RootsService {
     public RootsResponse calculateRoots(double[] coefficients) {
         RootsResponse response = new RootsResponse();
 
         try {
-            log.info("Processing coefficients: {}", Arrays.toString(coefficients));
-
             if (coefficients == null || coefficients.length == 0) {
                 response.setRoots(List.of("Invalid polynomial coefficients"));
                 return response;
             }
 
-            // Reverse the array since it's in opposite order
             double[] reversedCoefficients = reverseArray(coefficients);
-            log.info("Reversed coefficients: {}", Arrays.toString(reversedCoefficients));
-
             List<String> roots = findRoots(reversedCoefficients);
-            log.info("Calculated roots: {}", roots);
-
             response.setRoots(roots);
 
         } catch (Exception e) {
-            log.error("Error calculating roots", e);
             response.setRoots(List.of("Error occurred while calculating roots: " + e.getMessage()));
         }
 
@@ -55,7 +45,6 @@ public class RootsService {
             Complex[] complexRoots = solver.solveAllComplex(coefficients, 0);
             return formatRoots(complexRoots);
         } catch (Exception e) {
-            log.error("Error finding roots", e);
             return List.of("Error: Unable to find roots - " + e.getMessage());
         }
     }
