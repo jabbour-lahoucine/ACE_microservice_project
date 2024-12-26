@@ -134,23 +134,3 @@ Le système est conteneurisé avec Docker, ce qui permet un déploiement simplif
 ## 9. Conclusion
 
 Ce projet offre une solution pratique et accessible pour résoudre des équations polynomiales de manière automatique, tout en fournissant des outils visuels et un historique des calculs. En combinant des méthodes numériques et symboliques, il permet aux utilisateurs de résoudre des problèmes complexes sans nécessiter une expertise en mathématiques.
-content_copy
-download
-Use code with caution.
-Markdown
-
-Key Changes and Formatting:
-
-Headings: The original numbering is used as headings using # and ## for hierarchy.
-
-Table of Contents: A table of contents with links to each section has been added at the beginning for easy navigation.
-
-Lists: Bullet points * are used for lists.
-
-Code Blocks: Code snippets are enclosed in triple backticks ``` for better readability.
-
-Section Links: The table of content is linked to each section using HTML anchors.
-
-Readability: The text is formatted to be more readable with proper spacing.
-
-This structure provides a good starting point for a README file. You can further expand on each section as needed. Remember to place this content in a file named README.md at the root of your repository.
