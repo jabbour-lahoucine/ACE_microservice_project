@@ -111,40 +111,6 @@ Le système est conteneurisé avec Docker, ce qui permet un déploiement simplif
 
 ### 8.1. Installation et Configuration
 
-**Backend**
-
-1.  Cloner le projet
-    ```
-    git clone hhtps://github.com/jabbour-lahoucine/ACE_microservice_projet
-    ```
-2.  Accéder au service backend
-    ```
-    cd ACE_microservice_project
-    ```
-3.  Installer les dépendances
-    ```
-    mvn clean install
-    ```
-4.  Lancer le service
-    ```
-    mvn spring-boot:run
-    ```
-
-**Frontend**
-
-1.  Accéder au dossier frontend
-    ```
-    cd polynomial-solver
-    ```
-2.  Installer les dépendances
-    ```
-    npm install
-    ```
-3.  Démarrer le serveur
-    ```
-    npm start
-    ```
-
 **Docker:**
 
 1.  Lancer tous les services
@@ -157,7 +123,7 @@ Le système est conteneurisé avec Docker, ce qui permet un déploiement simplif
 ### 8.2. Guide d'Utilisation
 
 1.  Accéder à l'interface utilisateur:
-    *   Ouvrir le navigateur à l'adresse: `http://localhost:3000`
+    *   Ouvrir le navigateur à l'adresse: `http://localhost:3004`
 2.  Ajouter un Polynôme:
     *   Saisir un polynôme dans le formulaire.
     *   Obtenir automatiquement les racines et la factorisation du polynôme.
